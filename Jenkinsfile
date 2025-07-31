@@ -3,8 +3,9 @@ pipeline{
         label 'jenkins-slave'
     }
     stages{
-        steps{
+        
         stage('Build'){
+            steps{
             echo "********************Building Eureka Application********************"
             sh "mvn clean package"
         }
