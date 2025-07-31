@@ -1,4 +1,4 @@
-pipline{
+pipeline{
     agent{
         'jenkins-slave'
     }
