@@ -17,6 +17,7 @@ pipeline{
             echo "********************Building ${APPLICATION_NAME} Application********************"
             sh "mvn clean package"
         }
+        }
         stage('CodeQuality'){
             steps{
                 echo "********************Running Code Scans******************************"
@@ -28,6 +29,6 @@ pipeline{
                 """
             }
         }
-        }
+        
     }
 }
