@@ -17,7 +17,7 @@ pipeline{
             echo "********************Building ${APPLICATION_NAME} Application********************"
             sh "mvn clean package"
         }
-        stage('CodeQuality')
+        stage('CodeQuality'){
             steps{
                 echo "********************Running Code Scans******************************"
                 sh """
@@ -27,6 +27,7 @@ pipeline{
                     -Dsonar.login=${SONAR_CREDS}
                 """
             }
+        }
         }
     }
 }
