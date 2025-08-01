@@ -18,15 +18,15 @@ pipeline{
             sh "mvn clean package"
         }
         stage('CodeQuality')
-        steps{
-            echo "********************Running Code Scans******************************"
-            sh """
-            mvn clean verify sonar:sonar \
-                -Dsonar.projectKey=eureka \
-                -Dsonar.host.url=${SONAR_URL} \
-                -Dsonar.login=${SONAR_CREDS}
-            """
-        }
+            steps{
+                echo "********************Running Code Scans******************************"
+                sh """
+                mvn clean verify sonar:sonar \
+                    -Dsonar.projectKey=eureka \
+                    -Dsonar.host.url=${SONAR_URL} \
+                    -Dsonar.login=${SONAR_CREDS}
+                """
+            }
         }
     }
 }
